@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { nanoid } from 'nanoid';
 import Header from './Header';
 import AddContact from './AddContact';
@@ -8,22 +8,39 @@ import './App.css';
 
 function App() {
 
-  const [contacts,setContacts] =useState([
+  const [contacts, setContacts] = useState([
     {
-      id:nanoid(),
-      name:'Gota',
-      email:'gota@gmail.com'
+      id: nanoid(),
+      name: 'Gota',
+      email: 'gota@gmail.com'
     },
     {
-      id:nanoid(),
-      name:'Locker',
-      email:'locjer@gmail.com'
+      id: nanoid(),
+      name: 'Locker',
+      email: 'locker@gmail.com'
     }
   ]);
 
-  const addContact = ({name, email}) => {
+  useEffect(() => {
+    const loadContacts = JSON.parse(
+      localStorage.getItem('react-contact-list-data')
+    );
+
+    if (loadContacts) {
+      setContacts(loadContacts);
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem(
+      'react-contact-list-data',
+      JSON.stringify(contacts)
+    );
+  }, [contacts]);
+
+  const addContact = ({ name, email }) => {
     const newContact = {
-      id : nanoid(),
+      id: nanoid(),
       name: name,
       email: email
     }
@@ -31,11 +48,18 @@ function App() {
     setContacts(newList);
   }
 
+  const deleteContact = (id) => {
+    const newList = contacts.filter((contact) => {
+      return contact.id !== id;
+    });
+    setContacts(newList);
+  }
+
   return (
     <div className='ui container'>
       <Header />
-      <AddContact handleAddContact={addContact}/>
-      <ContactList contacts={ contacts }/>
+      <AddContact handleAddContact={addContact} />
+      <ContactList contacts={contacts} handleDeleteContact={deleteContact} />
     </div>
   );
 }
