@@ -1,5 +1,6 @@
 import React from 'react'
 import user from '../images/user.jpg'
+import { Link } from 'react-router-dom';
 
 const ContactCard = ({ contact, handleDeleteContact }) => {
 
@@ -12,8 +13,10 @@ const ContactCard = ({ contact, handleDeleteContact }) => {
     <div className="item" key={contact.id}>
       <img src={user} alt="uder dp" className="ui avatar image" />
       <div className="content">
+        <Link to={`/contact/${contact.id}`}>
         <div className="header">{contact.name}</div>
         <div>{contact.email}</div>
+        </Link>
       </div>
       <i
         className="trash alternate outline icon"

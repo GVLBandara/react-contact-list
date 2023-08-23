@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
+import { BrowserRouter as Router, Switch, Route, Routes } from 'react-router-dom'
 import { nanoid } from 'nanoid';
 import Header from './Header';
 import AddContact from './AddContact';
 import ContactList from './ContactList';
+import ContactDetails from './ContactDetails';
 
 import './App.css';
 
@@ -57,9 +59,17 @@ function App() {
 
   return (
     <div className='ui container'>
-      <Header />
+      <Router>
+        <div><Header /></div>
+        <Routes>
+          <Route path="/contact/:id" element={<ContactDetails />} />
+          <Route path="/" element={<ContactList contacts={contacts} handleDeleteContact={deleteContact} />} />
+          <Route path="/add" element={<AddContact handleAddContact={addContact} />} />
+        </Routes>
+      </Router>
+      {/* <Header />
       <AddContact handleAddContact={addContact} />
-      <ContactList contacts={contacts} handleDeleteContact={deleteContact} />
+      <ContactList contacts={contacts} handleDeleteContact={deleteContact} /> */}
     </div>
   );
 }
