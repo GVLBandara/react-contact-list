@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 
 const AddContact = ({ handleAddContact }) => {
 
-  const history = useNavigate();
+  const navigate = useNavigate();
 
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -18,7 +18,7 @@ const AddContact = ({ handleAddContact }) => {
     console.log(name, ' ', email);
     handleAddContact({ name, email });
     e.target.reset();
-    history('/')
+    navigate('..')
   };
 
   return (

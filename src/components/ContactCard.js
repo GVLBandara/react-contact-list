@@ -7,7 +7,6 @@ const ContactCard = ({ contact, handleDeleteContact }) => {
   const navigate = useNavigate()
 
   const deleteContact = () => {
-
     handleDeleteContact(contact.id);
   }
 
