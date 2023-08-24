@@ -1,9 +1,10 @@
 import React from 'react';
 import user from '../images/user.jpg'
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 
 const ContactDetails = () => {
+    const navigate = useNavigate();
     const {name, email} = useLocation().state.contact;
     return (
         <div className='main'>
@@ -15,6 +16,9 @@ const ContactDetails = () => {
                         <div className="description">{email}</div>
                     </div>
                 </div>
+            </div>
+            <div className="center-div">
+                <button className="ui button blue center" onClick={()=>{navigate(-1)}}>Back</button>
             </div>
         </div>
     );

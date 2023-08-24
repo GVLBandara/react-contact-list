@@ -10,7 +10,7 @@ const AddContact = ({ handleAddContact }) => {
 
   const addContact = (e) => {
     e.preventDefault();
-    console.log(e);
+    //console.log(e);
     if (name === '' || email === '') {
       alert('All fields are mandetory!');
       return;
