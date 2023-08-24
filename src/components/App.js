@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { BrowserRouter as Router, Switch, Route, Routes } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import { nanoid } from 'nanoid';
 import Header from './Header';
 import AddContact from './AddContact';
@@ -67,10 +67,7 @@ function App() {
           <Route path="/add" element={<AddContact handleAddContact={addContact} />} />
         </Routes>
       </Router>
-      {/* <Header />
-      <AddContact handleAddContact={addContact} />
-      <ContactList contacts={contacts} handleDeleteContact={deleteContact} /> */}
-    </div>
+      </div>
   );
 }
 

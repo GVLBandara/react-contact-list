@@ -1,22 +1,23 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom';
 import user from '../images/user.jpg'
-import { Link } from 'react-router-dom';
 
 const ContactCard = ({ contact, handleDeleteContact }) => {
 
+  const navigate = useNavigate()
+
   const deleteContact = () => {
+
     handleDeleteContact(contact.id);
   }
 
-  console.log(contact);
+  //console.log(contact);
   return (
     <div className="item" key={contact.id}>
       <img src={user} alt="uder dp" className="ui avatar image" />
-      <div className="content">
-        <Link to={`/contact/${contact.id}`}>
+      <div className="content" onClick={()=>{navigate(`/contact/${contact.id}`,{state:{contact:contact}})}}>
         <div className="header">{contact.name}</div>
         <div>{contact.email}</div>
-        </Link>
       </div>
       <i
         className="trash alternate outline icon"
