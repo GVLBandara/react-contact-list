@@ -8,6 +8,7 @@ import ContactList from './ContactList';
 import ContactDetails from './ContactDetails';
 
 import './App.css';
+import EditContact from './EditContact';
 
 function App() {
 
@@ -33,12 +34,12 @@ function App() {
       getContacts();
   }, []);
 
-  useEffect(() => {
-    localStorage.setItem(
-      'react-contact-list-data',
-      JSON.stringify(contacts)
-    );
-  }, [contacts]);
+  // useEffect(() => {
+  //   localStorage.setItem(
+  //     'react-contact-list-data',
+  //     JSON.stringify(contacts)
+  //   );
+  // }, [contacts]);
 
   const addContact = async ({ name, email }) => {
     const newContact = {
@@ -58,14 +59,25 @@ function App() {
     setContacts(newList);
   }
 
+  const updateContact = async(contact) => {
+    console.log("Update  ", contact);
+    const response = await api.put(`/contacts/${contact.id}`, contact);
+    setContacts(
+      contacts.map((contact)=>{
+        return (contact.id === response.data.id)? {...response.data}:{contact}
+      })
+    );
+  }
+
   return (
     <div className='ui container'>
       <Router>
         <div><Header /></div>
         <Routes>
-          <Route path="/contact/:id" element={<ContactDetails />} />
           <Route path="/" element={<ContactList contacts={contacts} handleDeleteContact={deleteContact} />} />
           <Route path="/add" element={<AddContact handleAddContact={addContact} />} />
+          <Route path="/contact/:id" element={<ContactDetails />} />
+          <Route path="/edit" element={<EditContact handleUpdateContact={updateContact} />} />
         </Routes>
       </Router>
     </div>
