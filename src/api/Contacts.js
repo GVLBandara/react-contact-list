@@ -1,5 +1,5 @@
 import axios from "axios";
 
 export default axios.create({
-    baseURL:"http://localhost:3006/",
+    baseURL: "https://api.npoint.io/51feb11bca7c2fad54c8",
 })

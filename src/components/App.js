@@ -6,8 +6,7 @@ import Header from "./Header";
 import AddContact from "./AddContact";
 import ContactList from "./ContactList";
 import ContactDetails from "./ContactDetails";
-
-import "./App.css";
+import '../stylesheets/App.css';
 import EditContact from "./EditContact";
 
 function App() {
@@ -88,10 +87,10 @@ function App() {
   };
 
   return (
-    <div className="ui container">
+    <div className="wrapper">
       <Router>
         <div>
-          <Header />
+          {/* <Header /> */}
         </div>
         <Routes>
           <Route

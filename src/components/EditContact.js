@@ -22,12 +22,13 @@ const EditContact = ({ handleUpdateContact }) => {
   };
 
   return (
-    <div className="ui main">
+    <div className="editContact">
       <h2>Edit Contact</h2>
-      <form className="ui form" onSubmit={updateContact}>
+      <form onSubmit={updateContact}>
         <div className="field">
-          <label htmlFor="name">Name</label>
+          {/* <label htmlFor="name">Name</label> */}
           <input
+            className="inputText"
             type="text"
             name="name"
             defaultValue={contact.name}
@@ -36,7 +37,7 @@ const EditContact = ({ handleUpdateContact }) => {
           />
         </div>
         <div className="field">
-          <label htmlFor="email">Name</label>
+          {/* <label htmlFor="email">Name</label> */}
           <input
             type="text"
             name="email"

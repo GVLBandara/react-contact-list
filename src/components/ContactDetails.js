@@ -5,9 +5,9 @@ import { useLocation, useNavigate } from 'react-router-dom';
 
 const ContactDetails = () => {
     const navigate = useNavigate();
-    const {name, email} = useLocation().state.contact;
+    const { name, email } = useLocation().state.contact;
     return (
-        <div className='main'>
+        <div className='contactDetails'>
             <div className='ui card centered'>
                 <div className="image">
                     <img src={user} alt="user" />
@@ -18,7 +18,7 @@ const ContactDetails = () => {
                 </div>
             </div>
             <div className="center-div">
-                <button className="ui button blue center" onClick={()=>{navigate(-1)}}>Back</button>
+                <button className="ui button blue center" onClick={() => { navigate(-1) }}>Back</button>
             </div>
         </div>
     );
