@@ -1,5 +1,9 @@
 body{
     overflow: hidden;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
     
 }
 
@@ -8,7 +12,7 @@ body{
     background-size: cover;
     margin: auto;
     max-width: 1000px;
-    min-width: 1000px;
+    min-width: 550px;
     min-height: 90vh;
     padding: 20px;
     margin-top: 10px;
@@ -64,6 +68,7 @@ body{
     padding-left: 20px;
     color: white;
     font-weight: 700;
+    cursor: pointer;
 }
 
 .contactEmail{
@@ -86,14 +91,15 @@ body{
 }
 
 .contactListHeader{
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
     flex-direction: row;
     justify-content: space-between;
     padding: 20px;
 }
 
 .searchBar{
-    min-width: 400px;
+    width: 100%;
 }
 
 .contactListHeader h2{
@@ -163,4 +169,43 @@ input::placeholder {
     color: white;
 }
 
+.contactDetails{
+    background-color: #9b9b9b49;
+    width: 300px;
+    text-align: center;
+    height: 400px;
+    padding: 20px;
+    color: rgb(202, 202, 202);
+    border-radius: 20px;
+}
 
+.header{
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.description{
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.center-div button{
+    background-color: rgba(76, 0, 105, 0.5) !important;
+    width: 100%;
+}
+
+.contactDetailsWrapper{
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 550px) {
+    .wrapper{
+        max-width: 100%;
+    }
+}
