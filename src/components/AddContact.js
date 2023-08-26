@@ -22,15 +22,15 @@ const AddContact = ({ handleAddContact }) => {
   };
 
   return (
-    <div className='ui main'>
+    <div className='editContact'>
       <h2>Add Contact</h2>
-      <form className='ui form' onSubmit={addContact}>
+      <form className='' onSubmit={addContact}>
         <div className='field'>
-          <label htmlFor="name">Name</label>
-          <input type="text" name="name" onChange={(event) => setName(event.target.value)} placeholder='Name' />
+          {/* <label htmlFor="name">NAME</label> */}
+          <input className='inputText' type="text" name="name" onChange={(event) => setName(event.target.value)} placeholder='Name' />
         </div>
         <div className='field'>
-          <label htmlFor="email">Name</label>
+          {/* <label htmlFor="email">EMAIL</label> */}
           <input type="text" name="email" onChange={(event) => setEmail(event.target.value)} placeholder='Email' />
         </div>
         <div>

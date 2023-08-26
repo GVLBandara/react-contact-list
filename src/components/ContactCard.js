@@ -11,29 +11,35 @@ const ContactCard = ({ contact, handleDeleteContact }) => {
 
   //console.log(contact);
   return (
-    <div className="item" key={contact.id}>
-      <img src={user} alt="uder dp" className="ui avatar image" />
-      <div
-        className="constent"
-        onClick={() => {
-          navigate(`/contact/${contact.id}`, { state: { contact: contact } });
-        }}
-      >
-        <div className="header">{contact.name}</div>
-        <div>{contact.email}</div>
+    <div className="contactRow" key={contact.id}>
+      <div className="contactNameEmailWrapper">
+        <img src={user} alt="uder dp" className="contactImage" width={25} />
+        <div className="contactNameEmail">
+          <div
+            className="constent"
+            onClick={() => {
+              navigate(`/contact/${contact.id}`, { state: { contact: contact } });
+            }}
+          >
+            <div className="header">{contact.name}</div>
+            <div className='contactEmail'>{contact.email}</div>
+          </div>
+        </div>
       </div>
-      <i
-        className="trash alternate outline icon"
-        onClick={deleteContact}
-        style={{ color: "red", marginTop: "7px" }}
-      />
-      <i
-        className="edit alternate outline icon"
-        onClick={() => {
-          navigate(`/edit`, { state: { contact } });
-        }}
-        style={{ color: "blue", marginTop: "7px" }}
-      />
+      <div>
+        <i
+          className="trash alternate outline icon"
+          onClick={deleteContact}
+          style={{ cursor: "pointer", color: "#ff0000bb", marginTop: "7px", marginRight: "20px" }}
+        />
+        <i
+          className="edit alternate outline icon"
+          onClick={() => {
+            navigate(`/edit`, { state: { contact } });
+          }}
+          style={{ cursor: "pointer", color: "#ffffff88", marginTop: "7px" }}
+        />
+      </div>
     </div>
   );
 };

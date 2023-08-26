@@ -1,0 +1,211 @@
+body{
+    overflow: hidden;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+    
+}
+
+.wrapper{
+    background-image:linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url("../images//neon-tropical-monstera-leaf-banner.jpg");
+    background-size: cover;
+    margin: auto;
+    max-width: 1000px;
+    min-width: 550px;
+    min-height: 90vh;
+    padding: 20px;
+    margin-top: 10px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px 10px gray;
+}
+
+.contactRow{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;    
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(4px);
+    background-color: rgba(158, 158, 158, 0.4);
+    padding:5px 20px;
+    margin-bottom: 10px;
+    font-size: 20px;
+    border-radius: 20px;
+}
+
+.contactRow i{
+    font-size: 25px;
+}
+
+.noContactsAvailable{
+    display: flex;
+    margin: auto;
+    height: 400px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border-radius: 20px;
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(5px);
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.contactNameEmailWrapper{
+    display: flex;
+    align-items: center;
+    padding-right: 20px;
+}
+
+.contactList div img{
+    padding-right: 10px;
+    width: 80px;
+}
+
+.contactNameEmail{
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.contactEmail{
+    font-size: 16px;
+    font-weight: 100;
+}
+
+.contactNameEmail div{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.contactList{  
+    overflow: hidden;
+    align-items: center;
+}
+
+.btnAddContactWrapper{
+    display: grid;
+}
+
+.contactListHeader{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.searchBar{
+    width: 100%;
+}
+
+.contactListHeader h2{
+    color: white;
+    font-size: 40px;
+}
+
+.btnAddContact{
+    background-color: rgba(76, 0, 105, 0.5);
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+    color: white;
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+}
+.scrollable{
+    height: 400px;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+.scrollable::-webkit-scrollbar-track{
+    margin-top: 10px;
+    margin-bottom: 20px;
+    background-color: transparent;
+}
+
+.editContact{
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(4px);
+    background-color: rgba(158, 158, 158, 0.4);
+    margin: auto;
+    margin-top: 60px;
+    padding: 20px;
+    padding-bottom: 60px;
+    border-radius: 20px;
+    width: 400px;
+    align-content: center;
+}
+
+.field input{
+    background-color: transparent !important;
+    border-bottom: 1px solid #9b9b9b !important;
+    outline: none;
+    border: none;
+    margin-bottom: 20px;
+    width: 100%;
+    color: #dadada;
+    font-size: 18px;
+
+}
+input::placeholder {
+    color: #9b9b9b; 
+}
+
+
+
+.editContact button{
+    width: 100%;
+    background-color: rgba(76, 0, 105, 0.5) !important;
+}
+
+.editContact h2{
+    text-align: center;
+    color: white;
+}
+
+.contactDetails{
+    background-color: #9b9b9b49;
+    width: 300px;
+    text-align: center;
+    height: 400px;
+    padding: 20px;
+    color: rgb(202, 202, 202);
+    border-radius: 20px;
+}
+
+.header{
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.description{
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.center-div button{
+    background-color: rgba(76, 0, 105, 0.5) !important;
+    width: 100%;
+}
+
+.contactDetailsWrapper{
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 550px) {
+    .wrapper{
+        max-width: 100%;
+    }
+}

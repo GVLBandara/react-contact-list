@@ -5,41 +5,45 @@ import ContactCard from "./ContactCard";
 const ContactList = ({ contacts, handleDeleteContact, handleSearch }) => {
   const navigate = useNavigate();
   return (
-    <div className="main">
-      <h2>
-        Contact List
+    <div className="contactList">
+      <div className="contactListHeader">
+        <h2>
+          Contact List
+        </h2>
+        <div className="ui search ">
+          <div className="ui icon input searchBar">
+            <input
+              type="text"
+              className="prompt"
+              placeholder="Search Contact"
+              onChange={(e) => {
+                handleSearch(e.target.value);
+              }}
+            />
+            <i className="search icon" />
+          </div>
+        </div>
+      </div>
+      <div className="ui called list scrollable">
+        {Object.keys(contacts).length > 0
+          ? contacts.map((contact) => (
+            <ContactCard
+              contact={contact}
+              key={contact.id}
+              handleDeleteContact={handleDeleteContact}
+            />
+          ))
+          : <div className="noContactsAvailable">No contacts available!</div>}
+      </div>
+      <div className="btnAddContactWrapper">
         <button
-          className="ui button blue right"
+          className="btnAddContact"
           onClick={() => {
             navigate("/add");
           }}
         >
           Add Contact
         </button>
-      </h2>
-      <div className="ui search">
-        <div className="ui icon input">
-          <input
-            type="text"
-            className="prompt"
-            placeholder="Search Contact"
-            onChange={(e) => {
-              handleSearch(e.target.value);
-            }}
-          />
-          <i className="search icon" />
-        </div>
-      </div>
-      <div className="ui called list">
-        {Object.keys(contacts).length > 0
-          ? contacts.map((contact) => (
-              <ContactCard
-                contact={contact}
-                key={contact.id}
-                handleDeleteContact={handleDeleteContact}
-              />
-            ))
-          : "No contacts available!"}
       </div>
     </div>
   );
