@@ -22,21 +22,23 @@ const AddContact = ({ handleAddContact }) => {
   };
 
   return (
-    <div className='editContact'>
-      <h2>Add Contact</h2>
-      <form className='' onSubmit={addContact}>
-        <div className='field'>
-          {/* <label htmlFor="name">NAME</label> */}
-          <input className='inputText' type="text" name="name" onChange={(event) => setName(event.target.value)} placeholder='Name' />
-        </div>
-        <div className='field'>
-          {/* <label htmlFor="email">EMAIL</label> */}
-          <input type="text" name="email" onChange={(event) => setEmail(event.target.value)} placeholder='Email' />
-        </div>
-        <div>
-          <button type='submit' className='ui button blue'>Add</button>
-        </div>
-      </form>
+    <div className='editContactWrapper'>
+      <div className='editContact'>
+        <h2>Add Contact</h2>
+        <form className='' onSubmit={addContact}>
+          <div className='field'>
+            {/* <label htmlFor="name">NAME</label> */}
+            <input className='inputText' type="text" name="name" onChange={(event) => setName(event.target.value)} placeholder='Name' />
+          </div>
+          <div className='field'>
+            {/* <label htmlFor="email">EMAIL</label> */}
+            <input type="text" name="email" onChange={(event) => setEmail(event.target.value)} placeholder='Email' />
+          </div>
+          <div>
+            <button type='submit' className='ui button blue'>Add</button>
+          </div>
+        </form>
+      </div>
     </div>
   )
 }

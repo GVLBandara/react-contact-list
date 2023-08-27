@@ -22,36 +22,38 @@ const EditContact = ({ handleUpdateContact }) => {
   };
 
   return (
-    <div className="editContact">
-      <h2>Edit Contact</h2>
-      <form onSubmit={updateContact}>
-        <div className="field">
-          {/* <label htmlFor="name">Name</label> */}
-          <input
-            className="inputText"
-            type="text"
-            name="name"
-            defaultValue={contact.name}
-            placeholder="Name"
-            onChange={(event) => setName(event.target.value)}
-          />
-        </div>
-        <div className="field">
-          {/* <label htmlFor="email">Name</label> */}
-          <input
-            type="text"
-            name="email"
-            defaultValue={contact.email}
-            placeholder="Email"
-            onChange={(event) => setEmail(event.target.value)}
-          />
-        </div>
-        <div>
-          <button type="submit" className="ui button blue">
-            Add
-          </button>
-        </div>
-      </form>
+    <div className="editContactWrapper">
+      <div className="editContact">
+        <h2>Edit Contact</h2>
+        <form onSubmit={updateContact}>
+          <div className="field">
+            {/* <label htmlFor="name">Name</label> */}
+            <input
+              className="inputText"
+              type="text"
+              name="name"
+              defaultValue={contact.name}
+              placeholder="Name"
+              onChange={(event) => setName(event.target.value)}
+            />
+          </div>
+          <div className="field">
+            {/* <label htmlFor="email">Name</label> */}
+            <input
+              type="text"
+              name="email"
+              defaultValue={contact.email}
+              placeholder="Email"
+              onChange={(event) => setEmail(event.target.value)}
+            />
+          </div>
+          <div>
+            <button type="submit" className="ui button blue">
+              Add
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
   );
 };
